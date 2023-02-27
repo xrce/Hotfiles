@@ -1,0 +1,181 @@
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                 false;
+    font:                       "Mononoki Nerd Font 10";
+}
+
+* {
+    border-colour:               #7AA2F7FF;
+    handle-colour:               #F38BA8FF;
+    background-colour:           #1E1E2EFF;
+    foreground-colour:           #F0F0F0FF;
+    alternate-background:        #282839FF;
+    normal-background:           #1E1E2EFF;
+    normal-foreground:           #F0F0F0FF;
+    urgent-background:           #FAB387FF;
+    urgent-foreground:           #1E1E2EFF;
+    active-background:           #F38BA8FF;
+    active-foreground:           #1E1E2EFF;
+    selected-normal-background:  #F38BA8FF;
+    selected-normal-foreground:  #1E1E2EFF;
+    selected-urgent-background:  #F38BA8FF;
+    selected-urgent-foreground:  #1E1E2EFF;
+    selected-active-background:  #FAB387FF;
+    selected-active-foreground:  #1E1E2EFF;
+    alternate-normal-background: #1E1E2EFF;
+    alternate-normal-foreground: #F0F0F0FF;
+    alternate-urgent-background: #FAB387FF;
+    alternate-urgent-foreground: #1E1E2EFF;
+    alternate-active-background: #F38BA8FF;
+    alternate-active-foreground: #1E1E2EFF;
+}
+
+/*****----- Main Window -----*****/
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    south east;
+    anchor:                      south east;
+    fullscreen:                  false;
+    width:                       440px;
+    x-offset:                    -20px;
+    y-offset:                    -80px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                @border-colour;
+    cursor:                      "default";
+    background-color:            @background-colour;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     20px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                @border-colour;
+    background-color:            transparent;
+    children:                    [ "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px;
+    border-radius:               15px;
+    border-color:                @border-colour;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+    children:                    [ "prompt" ];
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    padding:                     10px 14px;
+    border-radius:               15px;
+    background-color:            @urgent-background;
+    text-color:                  @border-colour;
+}
+prompt {
+    enabled:                     true;
+    padding:                     10px;
+    border-radius:               15px;
+    background-color:            @active-background;
+    text-color:                  @background-colour;
+}
+
+/*****----- Message -----*****/
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                @border-colour;
+    background-color:            @alternate-background;
+    text-color:                  @foreground-colour;
+}
+textbox {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    placeholder-color:           @foreground-colour;
+    blink:                       true;
+    markup:                      true;
+}
+error-message {
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                @border-colour;
+    background-color:            @border-colour;
+    text-color:                  @foreground-colour;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                @border-colour;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               15px;
+    border-color:                @alternate-background;
+    background-color:            @alternate-background;
+    text-color:                  @foreground-colour;
+    cursor:                      pointer;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+element selected.normal {
+    border:                      0px 2px 0px 2px;
+    border-radius:               15px;
+    background-color:            @active-background;
+    text-color:                  @background-colour;
+}

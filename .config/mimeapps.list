@@ -1,0 +1,12 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/msteams=teams.desktop
+
+[Added Associations]
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop;
+image/png=swayimg.desktop;
+text/plain=sublime_text.desktop;

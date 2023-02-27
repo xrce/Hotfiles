@@ -1,0 +1,105 @@
+{
+    "position": "bottom", 
+    "height": 60,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["custom/spotify"],
+    "modules-right": ["custom/bluetooth", "tray", "network", "pulseaudio", "battery", "clock", "custom/notification", "custom/powermenu"],
+	"sway/workspaces": {
+		"disable-scroll": false,
+		"all-outputs": true,
+		"format": "{icon}",
+	 	"persistent_workspaces": {
+	 		"1": [],
+	 		"2": [],
+	 		"3": [],
+	 		"4": [],
+	 		"5": [],
+	 		"6": [],
+	 		"7": [],
+	 		"8": [],
+	 		"9": [],
+	 		"10": []
+		},
+        "format-icons": {
+            "1": "一",
+           	"2": "二",
+       		"3": "三",
+       		"4": "四",
+           	"5": "五",
+           	"6": "六",
+           	"7": "七",
+           	"8": "八",
+            "9": "九",
+            "10": "〇"
+        }
+    },
+    "custom/powermenu": {
+    	"format": " ",
+    	"tooltip": false,
+        "on-click": "~/.config/rofi/powermenu.sh"
+    },
+    "custom/notification": {
+    	"format": "{}",
+        "interval": 1,
+        "exec": "~/.bin/notification.sh"
+    },
+    "custom/spotify": {
+    	"format": " {} ",
+        "interval": 1,
+        "exec-if": "pgrep spotify",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-scroll-up": "playerctl -p spotify previous",
+        "on-scroll-down": "playerctl -p spotify next",
+        "tooltip": false,
+        "exec": "~/.bin/spotify.sh"
+    },
+    "custom/bluetooth": {
+		"format": "{}",
+		"interval": 1,
+        "on-click": "~/.config/rofi/bluetooth.sh",
+        "on-click-right": "~/.bin/bluetooth.sh toggle",
+		"exec": "~/.bin/bluetooth.sh"
+    },
+    "tray": {
+    	"icon-size": 13,
+    	"spacing": 10
+    },
+	"clock": {
+		"format": "󰅐 {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	"battery": {
+        "states": {
+           		"warning": 30,
+           		"critical": 15
+        },
+       	"format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄{capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-full": "󱈑 {capacity}%",
+        "format-icons": ["󱊡", "󱊢", "󱊣"]
+	},
+	"network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰤮 Disconnected",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰤮 Disconnected",
+        "on-click": "~/.config/rofi/wifi.sh",
+		"tooltip-format-wifi": "  {signalStrength}% ⇅ {bandwidthDownBits}/{bandwidthUpBits}"
+	},
+	"pulseaudio": {
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"format": "{icon}  {volume}%",
+        	"format-muted": "󰖁 Muted",
+        	"format-icons": {
+            	"headphone": "",
+            	"hands-free": "",
+            	"headset": "",
+            	"phone": "",
+            	"portable": "",
+            	"car": "",
+            	"default": ["", "", ""]
+        }
+    }
+}
