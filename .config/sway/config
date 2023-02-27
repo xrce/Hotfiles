@@ -67,6 +67,7 @@ output * bg ~/Pictures/wallpapers/catppuccin/minimalistic/maroon-cat.png fill
 
 # Behavior
 focus_follows_mouse yes
+floating_modifier $mod normal
 
 ### Idle configuration
 #
