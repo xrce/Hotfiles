@@ -8,7 +8,7 @@ yes='Yes'
 no='No'
 
 # Rofi CMD
-rofi_cmd() { rofi -dmenu -theme-str 'listview {columns: 4; lines: 1;}' -theme control.rasi; }
+rofi_cmd() { rofi -dmenu -theme-str 'listview {columns: 4; lines: 1;}' -theme-str 'mainbox {children: [ "message", "listview" ];}' -mesg "Uptime : $(uptime -p | sed -e 's/up //g')" -theme control.rasi; }
 
 # Confirmation CMD
 confirm_cmd() {

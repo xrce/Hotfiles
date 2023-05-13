@@ -3,7 +3,7 @@
 if [[ $1 == "connect" ]]; then
     echo -e "SSID : $2"
     read -p "Password : " wifi_password
-    nmcli device wifi connect "$2" password "$wifi_password" | grep "successfully" && echo "Connected" > ~/.bin/notification
+    nmcli device wifi connect "$2" password "$wifi_password" | grep "successfully" && notify-send "直  Connected" "$2"
     exit
 fi
 
@@ -30,6 +30,6 @@ elif [[ "$chosen_network" == $enabled ]]; then nmcli radio wifi off
 else
 	# Get saved connections
 	saved_connections=$(nmcli -g NAME connection)
-	if [[ $(echo "$saved_connections" | grep -w "$chosen_id") == "$chosen_id" ]]; then nmcli connection up id "$chosen_id" | grep "successfully" && echo "Connected" > ~/.bin/notification
-	else xterm -e "~/.config/rofi/wifi.sh connect $chosen_id"; fi
+	if [[ $(echo "$saved_connections" | grep -w "$chosen_id") == "$chosen_id" ]]; then nmcli connection up id "$chosen_id" | grep "successfully" && notify-send "直  Connected" "$chosen_id"
+	else xterm -e "~/.config/rofi/wifi.sh connect '$chosen_id'"; fi
 fi

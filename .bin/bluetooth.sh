@@ -7,10 +7,11 @@ power_on() {
 
 # Toggles power state
 toggle_power() {
-    if power_on; then bluetoothctl power off
+    if power_on; then bluetoothctl power off && notify-send " Bluetooth" "Status: Disabled"
     else
         if rfkill list bluetooth | grep -q 'blocked: yes'; then rfkill unblock bluetooth && sleep 3; fi
         bluetoothctl power on
+        notify-send " Bluetooth" "Status: Enabled"
     fi
 }
 

@@ -42,20 +42,20 @@ tooltip {
 	border-radius: 15px;
 }
 
-#workspaces, #custom-date, #custom-spotify, #custom-notification, #custom-powermenu, #custom-bluetooth, #clock, #battery, #pulseaudio, #network, #workspaces, #tray {
+#workspaces, #custom-date, #custom-notification, #custom-powermenu, #custom-bluetooth, #clock, #battery, #pulseaudio, #network, #workspaces, #tray {
 	background-color: #1e1e2e;
 	padding: 5px 10px;
-	margin: 0px 0px 10px 0px;
+	margin: 10px 0px 0px 0px;
 }
 
-#workspaces, #custom-spotify {
+#workspaces, #custom-notification {
 	border-radius: 15px 15px 15px 15px;
 	margin-left: 20px;
 	margin-right: 20px;
 }
 
-#custom-spotify {
-	background-color: #a6e3a1;
+#custom-notification {
+	background-color: #f38ba8;
 	color: #0f0f0f;
 }
 
@@ -73,10 +73,6 @@ tooltip {
 	color: #f38ba8;
 	border-radius: 0px 15px 15px 0px;
     margin-right: 20px;
-}
-
-#custom-notification {
-	margin-right: -10px;
 }
 
 #clock {

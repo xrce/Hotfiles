@@ -1,9 +1,9 @@
 {
-    "position": "bottom", 
+    "position": "top", 
     "height": 60,
     "modules-left": ["sway/workspaces"],
-    "modules-center": ["custom/spotify"],
-    "modules-right": ["custom/bluetooth", "tray", "network", "pulseaudio", "battery", "clock", "custom/notification", "custom/powermenu"],
+    "modules-center": ["custom/notification"],
+    "modules-right": ["custom/bluetooth", "tray", "network", "pulseaudio", "battery", "clock", "custom/powermenu"],
 	"sway/workspaces": {
 		"disable-scroll": false,
 		"all-outputs": true,
@@ -41,17 +41,11 @@
     "custom/notification": {
     	"format": "{}",
         "interval": 1,
-        "exec": "~/.bin/notification.sh"
-    },
-    "custom/spotify": {
-    	"format": " {} ",
-        "interval": 1,
-        "exec-if": "pgrep spotify",
         "on-click": "playerctl -p spotify play-pause",
         "on-scroll-up": "playerctl -p spotify previous",
         "on-scroll-down": "playerctl -p spotify next",
         "tooltip": false,
-        "exec": "~/.bin/spotify.sh"
+        "exec": "~/.bin/notification.sh"
     },
     "custom/bluetooth": {
 		"format": "{}",
@@ -65,8 +59,7 @@
     	"spacing": 10
     },
 	"clock": {
-		"format": "󰅐 {:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+		"format": "󰅐 {:%H:%M}"
 	},
 	"battery": {
         "states": {
